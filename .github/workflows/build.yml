@@ -14,10 +14,10 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: testing_db
-          MYSQL_USER: user
-          MYSQL_PASSWORD: password
+          MYSQL_ROOT_PASSWORD: 12345678
+          MYSQL_DATABASE: compra_venta
+          MYSQL_USER: root
+          MYSQL_PASSWORD: 12345678
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
@@ -29,10 +29,15 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "7.2.5"  # Cambia a la versión que uses
+          php-version: "8.2.27"  # Cambia a la versión que uses
           extensions: mbstring, pdo, mysql, bcmath
           coverage: none
 
+      # Cambiar el directorio a la carpeta donde está composer.json
+      - name: Change directory to Backend
+        run: cd "Sistema Compraventa BackEnd"  # Cambia a la ruta de tu carpeta
+
+      # Instalar dependencias con Composer
       - name: Install Composer Dependencies
         run: composer install --no-progress --no-interaction --prefer-dist
 
