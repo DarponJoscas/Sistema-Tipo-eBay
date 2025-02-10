@@ -1,1 +1,46 @@
 
+# Dependencias y configuración de Composer
+/vendor
+/composer.lock
+
+# Archivos del entorno
+.env
+.env.backup
+.env.local
+.env.testing
+.env.*.local
+
+# Caché y logs
+/storage/*.key
+/storage/oauth-private.key
+/storage/oauth-public.key
+/storage/*.log
+/storage/debugbar
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/bootstrap/cache/*
+
+# Base de datos y archivos de pruebas
+/database/*.sqlite
+/database/*.sqlite3
+/database/*.log
+
+# Node.js y Vite
+/node_modules
+/npm-debug.log
+/yarn-error.log
+/public/hot
+/public/storage
+/.vite
+/.cache
+
+# Configuración del IDE
+/.idea
+/.vscode
+/_ide_helper.php
+/.phpstorm.meta.php
+
+# Otros
+/tests/**/*.actual.json
+/tests/**/*.expected.json
