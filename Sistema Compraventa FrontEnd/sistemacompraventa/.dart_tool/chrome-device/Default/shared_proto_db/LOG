@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 2025/02/07-07:17:43.736 211c Creating DB C:\Users\DELL\AppData\Local\Temp\flutter_tools.1b1cec9a\flutter_tools_chrome_device.4a76ae0f\Default\shared_proto_db since it was missing.
 2025/02/07-07:17:43.800 211c Reusing MANIFEST C:\Users\DELL\AppData\Local\Temp\flutter_tools.1b1cec9a\flutter_tools_chrome_device.4a76ae0f\Default\shared_proto_db/MANIFEST-000001
+=======
+2025/02/06-14:44:51.946 3314 Creating DB C:\Users\sandr\AppData\Local\Temp\flutter_tools.95ec06e\flutter_tools_chrome_device.d69c6a64\Default\shared_proto_db since it was missing.
+2025/02/06-14:44:52.006 3314 Reusing MANIFEST C:\Users\sandr\AppData\Local\Temp\flutter_tools.95ec06e\flutter_tools_chrome_device.d69c6a64\Default\shared_proto_db/MANIFEST-000001
+>>>>>>> cf68ed9f9ed263a5acedbfbec6c156439af58198

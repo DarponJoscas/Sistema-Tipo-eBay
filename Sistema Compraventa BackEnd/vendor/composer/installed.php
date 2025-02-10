@@ -3,7 +3,11 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
+<<<<<<< HEAD
         'reference' => 'c0839ec697559524159f9cd74477266fdd25c0bc',
+=======
+        'reference' => '80668a7e3b0d4207d86383180e4cb0b4ca069113',
+>>>>>>> cf68ed9f9ed263a5acedbfbec6c156439af58198
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -103,6 +107,18 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+<<<<<<< HEAD
+=======
+        'firebase/php-jwt' => array(
+            'pretty_version' => 'v6.11.0',
+            'version' => '6.11.0.0',
+            'reference' => '8f718f4dfc9c5d5f0c994cdfd103921b43592712',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../firebase/php-jwt',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> cf68ed9f9ed263a5acedbfbec6c156439af58198
         'fruitcake/php-cors' => array(
             'pretty_version' => 'v1.3.0',
             'version' => '1.3.0.0',
@@ -388,7 +404,11 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
+<<<<<<< HEAD
             'reference' => 'c0839ec697559524159f9cd74477266fdd25c0bc',
+=======
+            'reference' => '80668a7e3b0d4207d86383180e4cb0b4ca069113',
+>>>>>>> cf68ed9f9ed263a5acedbfbec6c156439af58198
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -439,6 +459,18 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< HEAD
+=======
+        'laravel/socialite' => array(
+            'pretty_version' => 'v5.17.1',
+            'version' => '5.17.1.0',
+            'reference' => '4b44c97c04da28e5aabb73df70b0999e9976382f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/socialite',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> cf68ed9f9ed263a5acedbfbec6c156439af58198
         'laravel/tinker' => array(
             'pretty_version' => 'v2.10.1',
             'version' => '2.10.1.0',
@@ -448,6 +480,27 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< HEAD
+=======
+        'lcobucci/clock' => array(
+            'pretty_version' => '2.3.0',
+            'version' => '2.3.0.0',
+            'reference' => 'c7aadcd6fd97ed9e199114269c0be3f335e38876',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../lcobucci/clock',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'lcobucci/jwt' => array(
+            'pretty_version' => '4.0.4',
+            'version' => '4.0.4.0',
+            'reference' => '55564265fddf810504110bd68ca311932324b0e9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../lcobucci/jwt',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> cf68ed9f9ed263a5acedbfbec6c156439af58198
         'league/commonmark' => array(
             'pretty_version' => '2.6.1',
             'version' => '2.6.1.0',
@@ -493,6 +546,18 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< HEAD
+=======
+        'league/oauth1-client' => array(
+            'pretty_version' => 'v1.11.0',
+            'version' => '1.11.0.0',
+            'reference' => 'f9c94b088837eb1aae1ad7c4f23eb65cc6993055',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/oauth1-client',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> cf68ed9f9ed263a5acedbfbec6c156439af58198
         'league/uri' => array(
             'pretty_version' => '7.5.1',
             'version' => '7.5.1.0',
@@ -598,6 +663,27 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< HEAD
+=======
+        'paragonie/constant_time_encoding' => array(
+            'pretty_version' => 'v3.0.0',
+            'version' => '3.0.0.0',
+            'reference' => 'df1e7fde177501eee2037dd159cf04f5f301a512',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../paragonie/constant_time_encoding',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'paragonie/random_compat' => array(
+            'pretty_version' => 'v9.99.100',
+            'version' => '9.99.100.0',
+            'reference' => '996434e5492cb4c3edcb9168db6fbb1359ef965a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../paragonie/random_compat',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> cf68ed9f9ed263a5acedbfbec6c156439af58198
         'phar-io/manifest' => array(
             'pretty_version' => '2.0.4',
             'version' => '2.0.4.0',
@@ -625,6 +711,18 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< HEAD
+=======
+        'phpseclib/phpseclib' => array(
+            'pretty_version' => '3.0.43',
+            'version' => '3.0.43.0',
+            'reference' => '709ec107af3cb2f385b9617be72af8cf62441d02',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpseclib/phpseclib',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> cf68ed9f9ed263a5acedbfbec6c156439af58198
         'phpunit/php-code-coverage' => array(
             'pretty_version' => '11.0.8',
             'version' => '11.0.8.0',
@@ -992,6 +1090,18 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+<<<<<<< HEAD
+=======
+        'stella-maris/clock' => array(
+            'pretty_version' => '0.1.7',
+            'version' => '0.1.7.0',
+            'reference' => 'fa23ce16019289a18bb3446fdecd45befcdd94f8',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../stella-maris/clock',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> cf68ed9f9ed263a5acedbfbec6c156439af58198
         'symfony/clock' => array(
             'pretty_version' => 'v7.2.0',
             'version' => '7.2.0.0',
@@ -1283,6 +1393,18 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< HEAD
+=======
+        'tymon/jwt-auth' => array(
+            'pretty_version' => '2.1.1',
+            'version' => '2.1.1.0',
+            'reference' => '51620ebd5b68bb3ce9e66ba86bda303ae5f10f7f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tymon/jwt-auth',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> cf68ed9f9ed263a5acedbfbec6c156439af58198
         'vlucas/phpdotenv' => array(
             'pretty_version' => 'v5.6.1',
             'version' => '5.6.1.0',

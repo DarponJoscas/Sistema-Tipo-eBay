@@ -62,6 +62,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///C:/Users/DELL/AppData/Local/Pub/Cache/hosted/pub.dev/font_awesome_flutter-10.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "leak_tracker",
       "rootUri": "file:///C:/Users/DELL/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.7",
       "packageUri": "lib/",
@@ -170,7 +176,7 @@
       "languageVersion": "3.6"
     }
   ],
-  "generated": "2025-02-07T01:08:14.269542Z",
+  "generated": "2025-02-10T13:11:57.170190Z",
   "generator": "pub",
   "generatorVersion": "3.6.1",
   "flutterRoot": "file:///C:/dev/flutter",

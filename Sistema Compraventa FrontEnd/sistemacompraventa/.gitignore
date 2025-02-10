@@ -1,0 +1,21 @@
+# Archivos de compilación
+/build
+/.dart_tool/
+/.dart_tool/
+/.packages
+/.flutter-plugins
+/.flutter-plugins-dependencies
+/flutter_build/
+
+# Configuración de VS Code y JetBrains
+/.vscode/
+/.idea/
+
+# Configuración local de pub y Flutter
+/pubspec.lock
+/.flutter-plugins
+/.metadata
+
+# Configuración del sistema operativo
+.DS_Store
+Thumbs.db

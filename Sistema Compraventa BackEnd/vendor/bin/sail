@@ -34,4 +34,8 @@ if [ -n "$bashSource" ]; then
     fi
 fi
 
+<<<<<<< HEAD
 "${dir}/sail" "$@"
+=======
+exec "${dir}/sail" "$@"
+>>>>>>> cf68ed9f9ed263a5acedbfbec6c156439af58198
