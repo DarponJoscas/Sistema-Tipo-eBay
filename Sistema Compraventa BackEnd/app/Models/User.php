@@ -20,9 +20,13 @@ class User extends Authenticatable implements JWTSubject
         'id_rol',
         'estado',
         'imagen_perfil',
-        'fecha_creacion'
+        'fecha_creacion',
+        'direccion',
+        'telefono',
     ];
 
+    public $timestamps = false;
+    
     protected $hidden = ['contrasena_usuario'];
 
     public function getAuthPassword()
