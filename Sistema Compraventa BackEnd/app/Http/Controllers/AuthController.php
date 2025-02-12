@@ -44,12 +44,12 @@ class AuthController extends Controller
     {
         
         $credentials = $request->validate([
-            'email_usuario' => 'required|email',
+            'name_usuario' => 'required|usuario',
             'contrasena_usuario' => 'required'
         ]);
 
         // Buscar al usuario por su correo
-        $user = User::where('email_usuario', $credentials['email_usuario'])->first();
+        $user = User::where('name_usuario', $credentials['name_usuario'])->first();
 
         if (!$user || $credentials['contrasena_usuario'] !== $user->contrasena_usuario) {
             \Log::error('No se pudo generar el token.', $credentials); 
