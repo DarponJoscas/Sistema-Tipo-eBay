@@ -57,8 +57,10 @@ class _MyHomePageState extends State<MyHomePage> {
         unselectedItemColor: Colors.grey,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Inicio"),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_bag), label: "Productos"),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Carrito"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_bag), label: "Productos"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart), label: "Carrito"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Perfil"),
         ],
       ),
