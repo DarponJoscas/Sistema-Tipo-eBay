@@ -1,10 +1,53 @@
+import 'dart:convert'; // Para la codificación JSON
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'shop.dart';
 import 'register.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({super.key});
+
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  // URL base de la API de Laravel
+  final String baseUrl = 'http://127.0.0.1:8000/api';
+
+  Future<void> loginUser(String email, String password) async {
+  final String url = '$baseUrl/login';
+
+  final response = await http.post(
+    Uri.parse(url),
+    headers: {'Content-Type': 'application/json'},
+    body: json.encode({
+      'email_usuario': email,
+      'contrasena_usuario': password,
+    }),
+  );
+
+  if (response.statusCode == 200) {
+    final Map<String, dynamic> data = json.decode(response.body);
+    print('Login exitoso: ${data['token']}');
+
+    // Navegar a ShopScreen después de iniciar sesión
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => ShopScreen()),
+    );
+  } else {
+    final Map<String, dynamic> errorData = json.decode(response.body);
+    print('Error en login: ${errorData['message']}');
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error de login: ${errorData['message']}')),
+    );
+  }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +60,7 @@ class Login extends StatelessWidget {
             padding: const EdgeInsets.only(right: 20),
             child: TextButton(
               onPressed: () {
+                // Navegar a pantalla de recuperación de contraseña
               },
               child: const Text(
                 "¿Olvidaste tu contraseña?",
@@ -91,6 +135,7 @@ class Login extends StatelessWidget {
                 SizedBox(
                   width: 400,
                   child: TextField(
+                    controller: emailController,
                     decoration: InputDecoration(
                       labelText: "Correo electrónico",
                       prefixIcon: Icon(Icons.email, color: Color(0xFFB68929)),
@@ -106,6 +151,7 @@ class Login extends StatelessWidget {
                 SizedBox(
                   width: 400,
                   child: TextField(
+                    controller: passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
                       labelText: "Contraseña",
@@ -129,7 +175,13 @@ class Login extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      String email = emailController.text;
+                      String password = passwordController.text;
+
+                      // Llamada a la función loginUser con los valores del formulario
+                      loginUser(email, password);
+                    },
                     child: const Text(
                       "Iniciar Sesión",
                       style: TextStyle(fontSize: 18, color: Colors.white),
@@ -148,7 +200,7 @@ class Login extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
 
-                // Botón para iniciar sesión con Google, Facebook, o Apple
+                // Botones para otras opciones de inicio de sesión (Google, Facebook, Apple)
                 SizedBox(
                   width: 400,
                   height: 50,

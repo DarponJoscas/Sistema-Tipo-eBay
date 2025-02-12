@@ -28,6 +28,8 @@ class AuthController extends Controller
             'id_rol' => $request->id_rol,
             'estado' => 1,
             'fecha_creacion' => now(),
+            'direccion' => Hash::make($request->direccion),
+            'telefono' => Hash::make($request->telefono),
         ]);
 
         // Generar un token para el nuevo usuario

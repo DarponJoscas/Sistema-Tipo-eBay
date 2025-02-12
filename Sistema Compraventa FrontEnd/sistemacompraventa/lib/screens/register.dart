@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:http/http.dart' as http;
+import 'shop.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -9,7 +12,45 @@ class Register extends StatefulWidget {
 }
 
 class RegisterState extends State<Register> {
-  String selectedOption = "personal"; // Opción por defecto
+  String selectedOption = "personal"; 
+
+  final TextEditingController nameUserController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  // URL base de la API de Laravel
+  final String baseUrl = 'http://127.0.0.1:8000/api';
+
+  Future<void> registerUser(String email, String password, String user) async {
+  final String url = '$baseUrl/register';
+
+  final response = await http.post(
+    Uri.parse(url),
+    headers: {'Content-Type': 'application/json'},
+    body: json.encode({
+      'name_usuario': user,
+      'email_usuario': email,
+      'contrasena_usuario': password,
+    }),
+  );
+
+  if (response.statusCode == 200) {
+    final Map<String, dynamic> data = json.decode(response.body);
+    print('Registre exitoso: ${data['token']}');
+
+    // Navegar a ShopScreen después de iniciar sesión
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => ShopScreen()),
+    );
+  } else {
+    final Map<String, dynamic> errorData = json.decode(response.body);
+    print('Error en registrar: ${errorData['message']}');
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error de registro: ${errorData['message']}')),
+    );
+  }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +171,7 @@ class RegisterState extends State<Register> {
       children: [
         _buildTextField(label: "Nombre", icon: Icons.person),
         const SizedBox(height: 10),
-        _buildTextField(label: "Email", icon: Icons.email),
+        _buildTextField(label: "Email", icon: Icons.email, ),
         const SizedBox(height: 10),
         _buildTextField(label: "Contraseña", icon: Icons.lock, obscureText: true),
         const SizedBox(height: 20),
