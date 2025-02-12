@@ -13,20 +13,20 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController usuarioController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   // URL base de la API de Laravel
   final String baseUrl = 'http://127.0.0.1:8000/api';
 
-  Future<void> loginUser(String email, String password) async {
+  Future<void> loginUser(String user, String password) async {
   final String url = '$baseUrl/login';
 
   final response = await http.post(
     Uri.parse(url),
     headers: {'Content-Type': 'application/json'},
     body: json.encode({
-      'email_usuario': email,
+      'name_usuario': user,
       'contrasena_usuario': password,
     }),
   );
@@ -135,10 +135,10 @@ class _LoginState extends State<Login> {
                 SizedBox(
                   width: 400,
                   child: TextField(
-                    controller: emailController,
+                    controller: usuarioController,
                     decoration: InputDecoration(
-                      labelText: "Correo electrónico",
-                      prefixIcon: Icon(Icons.email, color: Color(0xFFB68929)),
+                      labelText: "Usuario",
+                      prefixIcon: Icon(Icons.person, color: Color(0xFFB68929)),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: Color(0xFFB68929)),
@@ -176,7 +176,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     onPressed: () {
-                      String email = emailController.text;
+                      String email = usuarioController.text;
                       String password = passwordController.text;
 
                       // Llamada a la función loginUser con los valores del formulario
@@ -188,112 +188,6 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
-
-                const Text(
-                  "O",
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Color(0xFFB68929),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 10),
-
-                // Botones para otras opciones de inicio de sesión (Google, Facebook, Apple)
-                SizedBox(
-                  width: 400,
-                  height: 50,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      side: const BorderSide(color: Colors.black), // Borde negro
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/google.png', // Cambia esto a la ruta de tu imagen de Google
-                          width: 25,
-                          height: 25,
-                        ),
-                        const SizedBox(width: 10),
-                        const Text(
-                          "Continuar con Google",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 10),
-
-                SizedBox(
-                  width: 400,
-                  height: 50,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      side: const BorderSide(color: Colors.black), // Borde negro
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        FaIcon(FontAwesomeIcons.facebook, size: 25, color: Colors.blue), // Icono de Facebook
-                        const SizedBox(width: 10),
-                        const Text(
-                          "Continuar con Facebook",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 10),
-
-                SizedBox(
-                  width: 400,
-                  height: 50,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      side: const BorderSide(color: Colors.black), 
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        FaIcon(FontAwesomeIcons.apple, size: 25, color: Colors.black), 
-                        const SizedBox(width: 10),
-                        const Text(
-                          "Continuar con Apple",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 10),
               ],
             ),
           ),
