@@ -11,27 +11,23 @@ class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
 
-    protected $table = 'usuarios'; 
+    protected $table = 'usuarios';
 
     protected $fillable = [
         'name_usuario',
-        'email_usuario',
         'contrasena_usuario',
         'id_rol',
         'estado',
         'imagen_perfil',
-        'fecha_creacion',
         'direccion',
         'telefono',
     ];
 
-    public $timestamps = false;
-    
     protected $hidden = ['contrasena_usuario'];
 
     public function getAuthPassword()
     {
-        return $this->contrasena_usuario; 
+        return $this->contrasena_usuario;
     }
 
     public function getJWTIdentifier()
