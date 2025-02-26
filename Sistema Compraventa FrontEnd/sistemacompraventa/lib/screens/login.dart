@@ -24,14 +24,19 @@ class _LoginState extends State<Login> {
 
   final response = await http.post(
     Uri.parse(url),
-    headers: {'Content-Type': 'application/json'},
+    headers: {
+      'Accept' : 'application/json',
+      'Content-Type': 'application/json'},
     body: json.encode({
       'name_usuario': user,
       'contrasena_usuario': password,
     }),
   );
 
+
+
   if (response.statusCode == 200) {
+
     final Map<String, dynamic> data = json.decode(response.body);
     print('Login exitoso: ${data['token']}');
 
@@ -42,6 +47,7 @@ class _LoginState extends State<Login> {
     );
   } else {
     final Map<String, dynamic> errorData = json.decode(response.body);
+
     print('Error en login: ${errorData['message']}');
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Error de login: ${errorData['message']}')),
