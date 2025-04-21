@@ -1,23 +1,33 @@
 <?php
 
 return [
-
     'defaults' => [
-    'guard' => 'api',
-    'passwords' => 'users',
-],
-
-'guards' => [
-    'api' => [
-        'driver' => 'jwt',
-        'provider' => 'users',
+        'guard' => 'web',
+        'passwords' => 'users',
     ],
-],
 
-'providers' => [
-    'users' => [
-        'driver' => 'eloquent',
-        'model' => App\Models\User::class,
+    'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'usuarios',
+        ],
     ],
-],
+
+    'providers' => [
+        'usuarios' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+    ],
+
+    'passwords' => [
+        'usuarios' => [
+            'provider' => 'usuarios',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+    ],
+
+    'password_timeout' => 10800,
 ];

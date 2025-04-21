@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Tymon\JWTAuth\Facades\JWTAuth;
-use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -42,7 +42,7 @@ class AuthController extends Controller
     // Método de login
     public function login(Request $request)
     {
-        
+
         $credentials = $request->validate([
             'name_usuario' => 'required|usuario',
             'contrasena_usuario' => 'required'
@@ -52,7 +52,7 @@ class AuthController extends Controller
         $user = User::where('name_usuario', $credentials['name_usuario'])->first();
 
         if (!$user || $credentials['contrasena_usuario'] !== $user->contrasena_usuario) {
-            \Log::error('No se pudo generar el token.', $credentials); 
+            \Log::error('No se pudo generar el token.', $credentials);
             return response()->json(['message' => 'Credenciales incorrectas'], 401);
         }
 

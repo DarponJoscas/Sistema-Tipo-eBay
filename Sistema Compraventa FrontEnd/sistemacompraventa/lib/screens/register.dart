@@ -18,7 +18,6 @@ class RegisterState extends State<Register> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  // URL base de la API de Laravel
   final String baseUrl = 'http://127.0.0.1:8000/api';
 
   Future<void> registerUser(String email, String password, String user) async {
@@ -38,7 +37,6 @@ class RegisterState extends State<Register> {
     final Map<String, dynamic> data = json.decode(response.body);
     print('Registre exitoso: ${data['token']}');
 
-    // Navegar a ShopScreen después de iniciar sesión
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => ShopScreen()),
@@ -134,7 +132,6 @@ class RegisterState extends State<Register> {
     );
   }
 
-  // Widget para mostrar las opciones de registro
   Widget _buildRegisterOption({
     required IconData icon,
     required String title,
